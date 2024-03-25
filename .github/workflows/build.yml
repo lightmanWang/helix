@@ -11,7 +11,7 @@ on:
 jobs:
   check:
     name: Check (msrv)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: github.repository == 'helix-editor/helix' || github.event_name != 'schedule'
     steps:
       - name: Checkout sources
@@ -62,11 +62,11 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-20.04, macos-latest, windows-latest]
 
   lints:
     name: Lints
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: github.repository == 'helix-editor/helix' || github.event_name != 'schedule'
     steps:
       - name: Checkout sources
@@ -94,7 +94,7 @@ jobs:
 
   docs:
     name: Docs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: github.repository == 'helix-editor/helix' || github.event_name != 'schedule'
     steps:
       - name: Checkout sources
